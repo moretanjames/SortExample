@@ -29,7 +29,6 @@ fun RecyclerViewImpl(modifier: Modifier = Modifier) {
 
 class PersonAdapter(private val people: List<Person>) : RecyclerView.Adapter<PersonAdapter.PersonViewHolder>() {
 
-  // create new views
   override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PersonViewHolder {
     return PersonViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.person_layout, parent, false))
   }
@@ -41,10 +40,8 @@ class PersonAdapter(private val people: List<Person>) : RecyclerView.Adapter<Per
     holder.color.setBackgroundColor(person.faveColor.toArgb())
   }
 
-  // return the number of the items in the list
   override fun getItemCount() = people.size
 
-  // Holds the views for adding it to image and text
   class PersonViewHolder(personView: View) : RecyclerView.ViewHolder(personView) {
     val name: TextView = personView.findViewById(R.id.person_name)
     val bDay: TextView = personView.findViewById(R.id.person_bday)
